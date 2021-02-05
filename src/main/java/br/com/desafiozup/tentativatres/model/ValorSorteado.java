@@ -1,5 +1,8 @@
 package br.com.desafiozup.tentativatres.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,5 +32,8 @@ public class ValorSorteado {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn( name = "fk_idregra_sorteio")
 	private RegraSorteio regraSorteio;
+	
+	@ManyToMany( mappedBy = "valorSorteado")
+	private Set<Sorteio> sorteio = new HashSet<>();
 	
 }
