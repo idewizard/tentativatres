@@ -30,7 +30,7 @@ public class ValorSorteado {
 	private byte valorSorteado;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn( name = "fk_idregra_sorteio")
+	@JoinColumn( name = "fk_idregra_sorteio" , nullable = false)
 	private RegraSorteio regraSorteio;
 	
 	@ManyToMany( mappedBy = "valorSorteado")
