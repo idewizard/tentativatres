@@ -8,15 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
 @Data
 @Entity
 @Table( name = "pessoa")
+@JsonIgnoreProperties({"sorteio"})
 public class Pessoa {
 
 	@Id
@@ -33,7 +36,8 @@ public class Pessoa {
 	@Column(name = "email" , nullable = false , unique = true)
 	private String email;
 	
-	@OneToMany( mappedBy =  "pessoa" , cascade = CascadeType.ALL )
+	@JsonProperty("sorteio")
+	@OneToMany( mappedBy =  "pessoa" , cascade = CascadeType.ALL )	
 	private List<Sorteio> sorteio;
 	
 }

@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 
@@ -33,9 +35,11 @@ public class Sorteio {
 	@Column( name = "data_sorteio" , nullable = false)
 	private Date dataSorteio;
 		
+	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_idpessoa" , nullable = false)
+	@JoinColumn(name = "fk_idpessoa" , nullable = false)	
 	private Pessoa pessoa;
+	
 	
 	@ManyToMany(cascade = {CascadeType.ALL})
 	@JoinTable(
