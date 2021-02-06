@@ -34,6 +34,7 @@ import lombok.Data;
 			name = "busca",
 			procedureName = "busca",
 			parameters = {
+					
 					@StoredProcedureParameter(
 							mode = ParameterMode.IN,
 							name = "email_entrada",
@@ -43,6 +44,21 @@ import lombok.Data;
 							mode = ParameterMode.OUT,
 							name = "email_saida",
 							type = String.class
+							),
+					@StoredProcedureParameter(
+							mode = ParameterMode.OUT,
+							name = "idsorteio_saida",
+							type = Integer.class
+							),
+					@StoredProcedureParameter(
+							mode = ParameterMode.OUT,
+							name = "saida_valor_sorteado",
+							type = Byte.class
+							),
+					@StoredProcedureParameter(
+							mode = ParameterMode.OUT,
+							name = "saida_nome_sorteio",
+							type = Integer.class
 							)
 					
 			}

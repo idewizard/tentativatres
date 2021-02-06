@@ -28,10 +28,18 @@ public class SorteioDAO {
 //				 .createNamedStoredProcedureQuery("busca")
 //				.setParameter("email_entrada", email)
 //				.getResultList().get(0);
+//		 
+//		 entityManager
+//		 .createNamedStoredProcedureQuery("busca")
+//		.setParameter("email_entrada", email)
+//		.getResultList();
 		 
-		 resultadoDAO.setEmail(String.valueOf(entityManager
+		 String email_saida = entityManager
 		 .createNamedStoredProcedureQuery("busca")
-		.setParameter("email_entrada", email).getParameter("email_saida")));
+		.setParameter("email_entrada", email).getParameter("email_saida").toString();
+		
+		 
+		 resultadoDAO.setEmail(email_saida);
 		 
 		 
 		 List<ResultadoDAO> resultadoLista = new ArrayList<>();
