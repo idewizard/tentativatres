@@ -23,8 +23,8 @@ public class RegraSorteio {
 	@Column( name = "idregra_sorteio")
 	private long id;
 	
-	@Column( name = "tipo_sorteio" , nullable = false , unique = true)
-	private String tipoSorteio;
+	@Column( name = "nome_sorteio" , nullable = false , unique = true)
+	private String nomeSorteio;
 	
 	@Column( name = "qtd_valor_sorteado" , nullable = false)
 	private int qtdValorSorteio;

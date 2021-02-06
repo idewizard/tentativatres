@@ -15,6 +15,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,6 +29,20 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "sorteio")
+@NamedStoredProcedureQueries({
+	@NamedStoredProcedureQuery(			
+			name = "busca",
+			procedureName = "busca",
+			parameters = {
+					@StoredProcedureParameter(
+							mode = ParameterMode.IN,
+							name = "id_entrada",
+							type = String.class
+							)
+			}
+			)
+	
+})
 public class Sorteio {
 	
 	@Id
