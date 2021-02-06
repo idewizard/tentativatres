@@ -36,9 +36,15 @@ import lombok.Data;
 			parameters = {
 					@StoredProcedureParameter(
 							mode = ParameterMode.IN,
-							name = "id_entrada",
+							name = "email_entrada",
+							type = String.class
+							),
+					@StoredProcedureParameter(
+							mode = ParameterMode.OUT,
+							name = "email_saida",
 							type = String.class
 							)
+					
 			}
 			)
 	
