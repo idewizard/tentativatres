@@ -16,7 +16,6 @@ public class SorteioDAO {
 	private EntityManager entityManager;
 	
 	
-	
 	@SuppressWarnings("unchecked")
 	public List<ResultadoDAO> getSorteio(String email){
 		
@@ -39,7 +38,7 @@ public class SorteioDAO {
 		.setParameter("email_entrada", email).getParameter("email_saida").toString();
 		
 		 
-		 resultadoDAO.setEmail(email_saida);
+		// resultadoDAO.setEmail(email_saida);
 		 
 		 
 		 List<ResultadoDAO> resultadoLista = new ArrayList<>();
