@@ -20,10 +20,20 @@ public class SorteioController {
 	@Autowired
 	private SorteioDAO sorteioDAO;
 	
+<<<<<<< Updated upstream
 	@GetMapping("sorteios")
 	public List<ResultadoDAO> sorteios(@PathVariable String email){		
 		
 		return sorteioDAO.getSorteio(email);
+=======
+	@GetMapping("sorteios/{email}")
+	public List<ResultadoDAO> sorteios(@PathVariable String email){
+		
+		//List<Sorteio> sorteios = sorteioRepository.findAll();
+		
+		
+		return sDao.getSorteio(email);
+>>>>>>> Stashed changes
 	}
 	
 	
